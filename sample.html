@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="print.html">
+    <table bgcolor="darkgreen">
+        
+            <tr>
+            <td><label for="First Name">First Name:</label></td>
+            <td><input type="text"> <br></td>
+            </tr>
+            <tr>
+            <td><label for="Last Name">Last Name:</label></td>
+            <td><input type="text"><br><td>
+                </tr>
+            <tr>
+            <td><label for="Gender">Gender: </label> </td>
+            <td><input type="radio" id="male" name="gender" >Male 
+            <input type="radio" id="female" name="gender" >Female </td>
+            </tr>
+
+            <tr><td><label for="Email">Email:</label></td>
+            <td><input type="text"><br></td></tr>
+            <tr>
+                <td>
+            <label for="Phone">Phone:</label></td>
+            <td><input type="text"><br></td></tr>
+            <tr><td><label for="Age">Age:</label></td>
+            <td><input type="text"><br></td></tr>
+            <tr>
+    
+                
+                <td>
+                    <label for="dob">Date of birth:</label></td>
+                    <td><input type="date"><br></td></tr>
+    
+            <tr>
+    
+                <td>
+                    <label for="address">Address:</label></td>
+                    <td><textarea rows="6" cols="20"></textarea><br></td></tr>
+            <tr>
+                <td><label for="contact">Can we contact you ? </label> </td>
+                <td><input type="radio" id="yes" name="contact"> Yes 
+                    <input type="radio" id="no" name="contact"> No </td>
+
+            </tr>
+            <tr>
+                <td><label for="communication"> Communication Preference</label> </td>
+                <td><input type="checkbox" id="email" name="com">Email 
+                    <input type="checkbox" id="sms" name="com" > SMS </td>
+
+            </tr>
+                
+                   
+    <tr>
+            <td colspan="2"><button type="submit" value="Submit">Submit</button></td>
+            <td colspan="2"><button type="reset"  value="reset"> Reset</button>  </td>
+    </tr>
+    <tr>
+        <td><input type="submit" onclick="javascript:saveData()"; id="submit" name="submit value=submit" ></td>
+        <td><input type="reset" id="reset" name="reset" value="reset"></td>
+    </tr>
+    
+    
+
+
+
+        
+        </table>
+        </form>
+<script>
+    function saveData(){
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var address = document.getElementById('address').innerHTML;
+        //alert('firstName'+firstName);
+        var formData=new Object();
+        formData.firstname=firstName;
+        formData.lastName=lastName;
+        formData.address=address;
+    console.log(formData);
+    
+    localStorage.setItem('formData',formData);
+}
+
+
+
+</script>
+        
+</body>
+</html>
